@@ -1,28 +1,28 @@
 function skipLoginIfAlreadyLoggedIn() {
-    const currentUser = localStorage.getItem("currentUser");
+  const currentUser = localStorage.getItem("currentUser");
 
-    if (currentUser) {
-        window.location.assign("menu.html");
-    }
+  if (currentUser) {
+    window.location.assign("menu.html");
+  }
 };
 
 function forceLoginIfNotLoggedIn() {
-    const currentUser = localStorage.getItem("currentUser");
+  const currentUser = localStorage.getItem("currentUser");
 
-    if(!currentUser) {
-        window.location.assign("index.html");
-    }
+  if (!currentUser) {
+    window.location.assign("index.html");
+  }
 };
 
 function keepTheme() {
-    const htmlElement = document.querySelector("html");
-    const currentTheme = localStorage.getItem("savedTheme");
+  const htmlElement = document.querySelector("html");
+  const currentTheme = localStorage.getItem("savedTheme");
 
-    if (currentTheme == "light") {
-        htmlElement.setAttribute("data-bs-theme", "light");
-    } else {
-        htmlElement.setAttribute("data-bs-theme", "dark");
-    }
+  if (currentTheme == "light") {
+    htmlElement.setAttribute("data-bs-theme", "light");
+  } else {
+    htmlElement.setAttribute("data-bs-theme", "dark");
+  }
 };
 
 keepTheme();
