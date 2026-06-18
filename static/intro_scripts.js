@@ -1,15 +1,15 @@
 function skipLoginIfAlreadyLoggedIn() {
-    const username = localStorage.getItem("username");
+    const currentUser = localStorage.getItem("currentUser");
 
-    if (username) {
+    if (currentUser) {
         window.location.assign("menu.html");
     }
 };
 
 function forceLoginIfNotLoggedIn() {
-    const username = localStorage.getItem("username");
+    const currentUser = localStorage.getItem("currentUser");
 
-    if(!username) {
+    if(!currentUser) {
         window.location.assign("index.html");
     }
 };

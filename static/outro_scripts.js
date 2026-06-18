@@ -1,12 +1,12 @@
 
 function setUsername() {
     const usernameInputField = document.getElementById("usernameInputField").value;
-    window.localStorage.setItem("username", usernameInputField);
+    window.localStorage.setItem("currentUser", usernameInputField);
     window.location.assign("menu.html");
 };
 
 function setUsernameAnonymous() {
-    window.localStorage.setItem("username", "Anónimo");
+    window.localStorage.setItem("currentUser", "Anónimo");
     window.location.assign("menu.html");
 };
 
@@ -24,15 +24,15 @@ function changeTheme() {
 };
 
 function userLogoff() {
-    localStorage.setItem("username", "");
+    localStorage.setItem("currentUser", "");
     window.location.assign("index.html");
 };
 
 function welcomeUserInTheMenuTitle() {
-    const username = localStorage.getItem("username");
+    const currentUser = localStorage.getItem("currentUser");
 
-    if (username != "Anónimo") {
-        document.getElementById("menuTitle").innerHTML = "<h2 id='menuTitle'>Bienvenido, " + username +"!</h2>";
+    if (currentUser != "Anónimo") {
+        document.getElementById("menuTitle").innerHTML = "<h2 id='menuTitle'>Bienvenido, " + currentUser +"!</h2>";
     }
 };
 
