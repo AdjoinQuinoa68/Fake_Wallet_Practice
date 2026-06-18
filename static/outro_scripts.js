@@ -35,5 +35,3 @@ function welcomeUserInTheMenuTitle() {
         document.getElementById("menuTitle").innerHTML = "<h2 id='menuTitle'>Bienvenido, " + currentUser +"!</h2>";
     }
 };
-
-welcomeUserInTheMenuTitle();
