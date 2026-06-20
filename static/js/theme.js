@@ -11,3 +11,16 @@ function changeTheme() {
     window.localStorage.setItem("savedTheme", "dark");
   }
 };
+
+function loadTheme() {
+  const htmlElement = document.querySelector("html");
+  const currentTheme = localStorage.getItem("savedTheme");
+
+  if (currentTheme == "light") {
+    htmlElement.setAttribute("data-bs-theme", "light");
+  } else {
+    htmlElement.setAttribute("data-bs-theme", "dark");
+  }
+};
+
+loadTheme();
