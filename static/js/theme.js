@@ -1,3 +1,6 @@
+$(document).ready(() => {
+  $("#changeThemeButton").on("click", changeTheme());
+})
 
 function changeTheme() {
   const htmlElement = document.querySelector("html");
