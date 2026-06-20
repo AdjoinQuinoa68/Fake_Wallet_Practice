@@ -14,7 +14,7 @@ function forceLoginIfNotLoggedIn() {
   }
 };
 
-function keepTheme() {
+function loadTheme() {
   const htmlElement = document.querySelector("html");
   const currentTheme = localStorage.getItem("savedTheme");
 
@@ -25,4 +25,4 @@ function keepTheme() {
   }
 };
 
-keepTheme();
+loadTheme();

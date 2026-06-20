@@ -1,6 +1,19 @@
+function User(username) {
+  this.username = username;
+  this.money = 0;
+
+  this.deposit = function(amount) {
+    this.money += amount;
+  }
+  this.transfer = function(amount) {
+    this.money -= amount;
+  }
+};
 
 function setUsername() {
   const usernameInputField = document.getElementById("usernameInputField").value;
+  const userList = localStorage.getItem("userList");
+
   window.localStorage.setItem("currentUser", usernameInputField);
   window.location.assign("menu.html");
 };
@@ -8,19 +21,6 @@ function setUsername() {
 function setUsernameAnonymous() {
   window.localStorage.setItem("currentUser", "Anónimo");
   window.location.assign("menu.html");
-};
-
-function changeTheme() {
-  const htmlElement = document.querySelector("html");
-  const currentTheme = htmlElement.getAttribute("data-bs-theme");
-
-  if (currentTheme == "dark") {
-    htmlElement.setAttribute("data-bs-theme", "light");
-    window.localStorage.setItem("savedTheme", "light");
-  } else {
-    htmlElement.setAttribute("data-bs-theme", "dark");
-    window.localStorage.setItem("savedTheme", "dark");
-  }
 };
 
 function userLogoff() {
@@ -35,3 +35,11 @@ function welcomeUserInTheMenuTitle() {
     document.getElementById("menuTitle").innerHTML = "<h2 id='menuTitle'>Bienvenido, " + currentUser + "!</h2>";
   }
 };
+
+function createDummyUser() {
+  const userList = localStorage.getItem("userList");
+
+  if (!userList) {
+    const dummyUser = new User("Joaquín Díaz");
+  }
+}
