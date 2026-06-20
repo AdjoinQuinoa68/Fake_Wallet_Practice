@@ -45,11 +45,6 @@ function setUsername() {
   window.location.assign("menu.html");
 };
 
-function setUsernameAnonymous() {
-  window.localStorage.setItem("currentUser", "Anónimo");
-  window.location.assign("menu.html");
-};
-
 function userLogoff() {
   localStorage.setItem("currentUser", "");
   window.location.assign("index.html");
@@ -57,10 +52,7 @@ function userLogoff() {
 
 function welcomeUserInTheMenuTitle() {
   const currentUser = localStorage.getItem("currentUser");
-
-  if (currentUser != "Anónimo") {
-    document.getElementById("menuTitle").innerHTML = "<h2 id='menuTitle'>Bienvenido, " + currentUser + "!</h2>";
-  }
+  document.getElementById("menuTitle").innerHTML = "<h2 id='menuTitle'>Bienvenido, " + currentUser + "!</h2>";
 };
 
 function createDummyUser() {
