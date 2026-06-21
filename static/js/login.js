@@ -49,7 +49,7 @@ class User {
 // Should only need to run the very first time a user visits the site.
 $(document).ready(() => {
   if (!(localStorage.getItem("userList"))) {
-    const userList = JSON.stringify([(new User("Joaquín Díaz", 1337))]);
+    const userList = JSON.stringify([new User("dummy", 1337), new User("Joaquin", 20000)]);
     localStorage.setItem("userList", userList);
   }
 });
@@ -57,14 +57,13 @@ $(document).ready(() => {
 
 function handleLogin() {
   const username = $("#usernameInputField").val();
-  console.log(username);
   const userList = JSON.parse(localStorage.getItem("userList"));
+  console.log(userList);
 
-  let isUserInUserList = userList.forEach(element => {
+  let isUserInUserList = false;
+  userList.forEach(element => {
     if (username == element.username) {
-      return true;
-    } else {
-      return false;
+      isUserInUserList = true;
     }
   });
 
@@ -79,8 +78,7 @@ function handleLogin() {
     // prompt to create new user
     // new user object gets pushed into the userList array
     // and into localStorage
-    
   }
   console.log(username);
-  console.log(isUserInUserList);
+  console.log("is user in user list?:" + isUserInUserList);
 }
