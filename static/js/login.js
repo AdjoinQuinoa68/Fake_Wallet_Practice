@@ -71,7 +71,7 @@ function handleLogin() {
     console.log("Username field empty");
   } else if (isUserInUserList == true) {
     console.log("Username valid. Loging in...");
-    localStorage.setItem("currentUser", username);
+    localStorage.setItem("currentUserUsername", username);
     window.location.assign("menu.html");
   } else {
     console.log("Username NOT in userList");
