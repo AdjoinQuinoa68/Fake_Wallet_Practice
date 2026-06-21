@@ -1,4 +1,6 @@
 
+$("#userLogoffButton").on("click", userLogoff);
+
 function userLogoff() {
   localStorage.setItem("currentUser", "");
   window.location.assign("index.html");
