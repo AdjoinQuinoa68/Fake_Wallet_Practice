@@ -40,7 +40,7 @@ function handleLogin() {
     window.location.assign("menu.html");
   } else {
     console.log("Username NOT in userList");
-    if (window.confirm("This user does not exist. Would you like to create one?")) {
+    if (window.confirm("Este usuario no existe. ¿Desea crear uno nuevo?")) {
       const newUserList = Object.assign(userList, {[username]: new User(500)});
       console.log(newUserList);
       localStorage.setItem("userList", JSON.stringify(newUserList));
