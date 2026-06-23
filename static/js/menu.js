@@ -37,9 +37,9 @@ function depositMoney() {
 
 function transferMoney() {
   let userList = JSON.parse(localStorage.getItem("userList"));
-  const targetUser = window.prompt(`Escriba el nombre de usuario de la persona a quien busca transferir.
-    Lista de usuarios:
-    ${Object.keys(userList).reduce((list, username) => list + "\n" + username)}`);
+  const targetUser = window.prompt(`Escriba el nombre de usuario de la persona a quien busca transferir.\n
+  Lista de usuarios:
+- ${Object.keys(userList).reduce((list, username) => list + "\n- " + username)}`);
   const amount = parseInt(window.prompt("¿Cuánto dinero desea transferir?"));
 
   if (!targetUser) {
